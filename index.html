@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ahmed's Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A brief description of your portfolio or homepage.">
+    <meta name="keywords" content="portfolio, CV, projects, your name, web developer">
+    <meta name="author" content="Your Name">
+    <title>Your Name - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS (Optional) -->
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container py-5">
-    <div class="text-center mb-4">
-      <h1>Hi, I'm Ahmed 👋</h1>
-      <p class="lead">Computer Science & Mathematics student at the University of Manchester.</p>
+    <!-- Navbar (fixed-top for sticky navigation) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Your Name</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv.html">CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1>Welcome to My Portfolio</h1>
+                <p>Hello! I'm Your Name, a web developer with a passion for creating modern and responsive websites.</p>
+                <a href="projects.html" class="btn btn-primary">See My Projects</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="images/your-photo.jpg" alt="Your Name" class="img-fluid rounded-circle" style="max-width: 80%;">
+            </div>
+        </div>
     </div>
 
-    <div class="mb-5">
-      <h2>Projects</h2>
-      <ul class="list-group">
-        <li class="list-group-item">📧 Email spam classifier using machine learning</li>
-        <li class="list-group-item">🗺️ Interactive crime map of Manchester</li>
-        <li class="list-group-item">🍽️ Flask app for reviewing local cafes</li>
-      </ul>
-    </div>
+    <!-- Footer Section -->
+    <footer class="bg-light text-center py-3">
+        <p>&copy; 2025 Your Name | All Rights Reserved</p>
+    </footer>
 
-    <div>
-      <h2>Contact Me</h2>
-      <p>GitHub: <a href="https://github.com/a7jry" target="_blank">github.com/a7jry</a></p>
-      <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
-    </div>
-  </div>
+    <!-- Bootstrap JS & Popper.js (for responsive navbar) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
