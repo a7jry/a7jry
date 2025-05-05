@@ -4,63 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A brief description of your portfolio or homepage.">
-    <meta name="keywords" content="portfolio, CV, projects, Ahmed Al-Hjri, web developer">
-    <meta name="author" content="Ahmed Al-Hjri">
-    <title>Ahmed Al-Hjri - Portfolio</title>
+    <meta name="keywords" content="portfolio, CV, projects, Ahmed Al-Hajri, web developer">
+    <meta name="author" content="Ahmed Al-Hajri">
+    <title>Ahmed Al-Hajri - Portfolio</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS (Optional) -->
+    <!-- Optional custom styles -->
     <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar (fixed-top for sticky navigation) -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Ahmed Al-Hajri</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cv.html">CV</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Dynamic Navbar -->
+    <div id="header-placeholder"></div>
 
-    <!-- Main Content Section -->
+    <!-- Main Content -->
     <div class="container mt-5 pt-5">
         <div class="row">
             <div class="col-lg-6">
                 <h1>Welcome to My Portfolio</h1>
-                <p>I am a Computer Science and Mathematics student at the University of Manchester with a passion for problem-solving using computational methods and mathematics. I have a proven leadership record as President of the Omani Students Society, where I helped transform the society into a global leader. I am skilled in AI, Machine Learning, Web Development, and have strong programming and analytical abilities.</p>
-                <a href="projects.html" class="btn btn-primary">See My Projects</a>
+                <p>
+                    I am a Computer Science and Mathematics student at the University of Manchester with a passion for problem-solving using computational methods and mathematics.
+                    I have a proven leadership record as President of the Omani Students Society, where I helped transform the society into a global leader.
+                    I am skilled in AI, Machine Learning, Web Development, and have strong programming and analytical abilities.
+                </p>
             </div>
             <div class="col-lg-6">
-                <img src="images/me.jpg" alt="Ahmed Al-Hjri" class="img-fluid rounded-circle" style="max-width: 80%;">
+                <img src="images/me.jpg" alt="Ahmed Al-Hajri" class="img-fluid rounded-circle" style="max-width: 80%;">
             </div>
         </div>
     </div>
 
-    <!-- Footer Section -->
-    <footer class="bg-light text-center py-3">
-        <p>&copy; 2025 Ahmed Al-Hjri | All Rights Reserved</p>
 
-    </footer>
 
-    <!-- Bootstrap JS & Popper.js (for responsive navbar) -->
+    <!-- Bootstrap JS & Popper -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Script to inject header -->
+    <script>
+        // Load Header
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-placeholder").innerHTML = data;
+    
+                // Highlight active link
+                const currentPage = window.location.pathname.split("/").pop();
+                const navLinks = document.querySelectorAll(".nav-page");
+                navLinks.forEach(link => {
+                    if (link.getAttribute("href") === currentPage) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+    
+        // Load Footer
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+    </script>
+    
 </body>
 </html>
